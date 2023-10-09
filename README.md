@@ -12,10 +12,9 @@ Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.c
 
 - index.js
 
-```js
 // import App from './App';
 import App from './final/App';
-```
+
 
 #### Docs
 
