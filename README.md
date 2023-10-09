@@ -12,9 +12,10 @@ Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.c
 
 - index.js
 
+```js
 // import App from './App';
-import App from './final/App';
-
+import App from './final/App'
+```
 
 #### Docs
 
@@ -31,7 +32,7 @@ npm install react-router-dom@6
 - App.js
 
 ```js
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
@@ -48,10 +49,10 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 #### Components
@@ -59,10 +60,10 @@ export default App;
 - App.js
 
 ```js
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Products from './pages/Products';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Products from './pages/Products'
 
 function App() {
   return (
@@ -73,10 +74,10 @@ function App() {
         <Route path='products' element={<Products />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 #### Links
@@ -115,14 +116,14 @@ function App() {
         <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 ```
 
 - Error.js
 
 ```js
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Error = () => {
   return (
@@ -131,9 +132,9 @@ const Error = () => {
       <p>page not found</p>
       <Link to='/'>back home</Link>
     </section>
-  );
-};
-export default Error;
+  )
+}
+export default Error
 ```
 
 #### Nested Pages
@@ -154,7 +155,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 ```
 
@@ -163,7 +164,7 @@ function App() {
 - Home.js
 
 ```js
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -171,9 +172,9 @@ const Home = () => {
       <h2>Home Page</h2>
       <Outlet />
     </section>
-  );
-};
-export default Home;
+  )
+}
+export default Home
 ```
 
 #### Navbar
@@ -181,7 +182,7 @@ export default Home;
 - Navbar.js
 
 ```js
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -190,16 +191,16 @@ const Navbar = () => {
       <Link to='/about'>About</Link>
       <Link to='/products'>Products</Link>
     </nav>
-  );
-};
-export default Navbar;
+  )
+}
+export default Navbar
 ```
 
 - Home.js
 
 ```js
-import { Link, Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import { Link, Outlet } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 const Home = () => {
   return (
     <>
@@ -208,9 +209,9 @@ const Home = () => {
         <Outlet />
       </section>
     </>
-  );
-};
-export default Home;
+  )
+}
+export default Home
 ```
 
 #### Index Routes
@@ -224,8 +225,8 @@ export default Home;
 - SharedLayout.js
 
 ```js
-import { Link, Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import { Link, Outlet } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 const SharedLayout = () => {
   return (
     <>
@@ -234,9 +235,9 @@ const SharedLayout = () => {
         <Outlet />
       </section>
     </>
-  );
-};
-export default SharedLayout;
+  )
+}
+export default SharedLayout
 ```
 
 - Home.js
@@ -247,9 +248,9 @@ const Home = () => {
     <section className='section'>
       <h2>Home Page</h2>
     </section>
-  );
-};
-export default Home;
+  )
+}
+export default Home
 ```
 
 - App.js
@@ -267,7 +268,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 ```
 
@@ -276,18 +277,18 @@ function App() {
 - StyledNavbar.js
 
 ```js
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
-<nav className='navbar'>
+;<nav className='navbar'>
   <NavLink
     to='/about'
     style={({ isActive }) => {
-      return { color: isActive ? 'red' : 'grey' };
+      return { color: isActive ? 'red' : 'grey' }
     }}
   >
     Home
   </NavLink>
-</nav>;
+</nav>
 ```
 
 #### NavLink (className)
@@ -323,7 +324,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 ```
 
@@ -332,20 +333,20 @@ function App() {
 - SingleProduct.js
 
 ```js
-import { Link, useParams } from 'react-router-dom';
-import products from '../data';
+import { Link, useParams } from 'react-router-dom'
+import products from '../data'
 const SingleProduct = () => {
-  const { productId } = useParams();
+  const { productId } = useParams()
 
   return (
     <section className='section product'>
       <h2>{productId}</h2>
       <Link to='/products'>back to products</Link>
     </section>
-  );
-};
+  )
+}
 
-export default SingleProduct;
+export default SingleProduct
 ```
 
 #### Products Page
@@ -353,8 +354,8 @@ export default SingleProduct;
 - Products.js
 
 ```js
-import { Link } from 'react-router-dom';
-import products from '../data';
+import { Link } from 'react-router-dom'
+import products from '../data'
 const Products = () => {
   return (
     <section className='section'>
@@ -366,14 +367,14 @@ const Products = () => {
               <h5>{product.name}</h5>
               <Link to={`/products/${product.id}`}>more info</Link>
             </article>
-          );
+          )
         })}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products
 ```
 
 #### Single Product
@@ -381,12 +382,12 @@ export default Products;
 - SingleProduct.js
 
 ```js
-import { Link, useParams } from 'react-router-dom';
-import products from '../data';
+import { Link, useParams } from 'react-router-dom'
+import products from '../data'
 const SingleProduct = () => {
-  const { productId } = useParams();
-  const product = products.find((product) => product.id === productId);
-  const { image, name } = product;
+  const { productId } = useParams()
+  const product = products.find((product) => product.id === productId)
+  const { image, name } = product
 
   return (
     <section className='section product'>
@@ -394,10 +395,10 @@ const SingleProduct = () => {
       <h5>{name}</h5>
       <Link to='/products'>back to products</Link>
     </section>
-  );
-};
+  )
+}
 
-export default SingleProduct;
+export default SingleProduct
 ```
 
 #### useNavigate()
@@ -408,7 +409,7 @@ export default SingleProduct;
 
 ```js
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null)
 
   return (
     <BrowserRouter>
@@ -424,7 +425,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 ```
 
@@ -458,9 +459,9 @@ const Dashboard = ({ user }) => {
     <section className='section'>
       <h4>Hello, {user?.name}</h4>
     </section>
-  );
-};
-export default Dashboard;
+  )
+}
+export default Dashboard
 ```
 
 #### Protected Route
@@ -481,14 +482,14 @@ export default Dashboard;
 - ProtectedRoute.js
 
 ```js
-import { Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({ children, user }) => {
   if (!user) {
-    return <Navigate to='/' />;
+    return <Navigate to='/' />
   }
-  return children;
-};
+  return children
+}
 
-export default ProtectedRoute;
+export default ProtectedRoute
 ```
